@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Se define la codificación de caracteres de la página -->
+    <meta charset="UTF-8">
+
+    <!-- Se adapta la página a diferentes tamaños de pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión del proyecto académico</title>
+
+    <!-- Se conecta la hoja de estilos principal -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+    <div class="sistema">
+
+
+        <!-- =========================================
+             MENÚ LATERAL
+             ========================================= -->
+
+        <aside class="menu-lateral">
+
+            <div class="logo">
+
+                <h2>Gestor Académico</h2>
+
+                <p>Proyectos académicos</p>
+
+            </div>
+
+
+            <!-- Opciones principales de navegación -->
+            <nav class="navegacion">
+
+                <button
+                    class="menu-item activo"
+                    data-seccion="inicio"
+                >
+                    Inicio
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-seccion="proyectos"
+                >
+                    Proyectos
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-seccion="integrantes"
+                >
+                    Integrantes
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-seccion="tareas"
+                >
+                    Tareas
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-seccion="recursos"
+                >
+                    Recursos
+                </button>
+
+
+                <button
+                    class="menu-item"
+                    data-seccion="recordatorios"
+                >
+                    Recordatorios
+                </button>
+
+            </nav>
+
+
+            <!-- Botón para cerrar la sesión -->
+            <button
+                id="cerrarSesion"
+                class="cerrar-sesion"
+            >
+                Cerrar sesión
+            </button>
+
+        </aside>
+
+
+        <!-- =========================================
+             CONTENIDO PRINCIPAL
+             ========================================= -->
+
+        <main class="contenido">
+
+
+            <!-- Encabezado general del sistema -->
+            <header class="encabezado">
+
+                <div>
+
+                    <h1 id="tituloSeccion">
+                        Gestión del proyecto académico
+                    </h1>
+
+                    <p>
+                        Administración y seguimiento del proyecto
+                    </p>
+
+                </div>
+
+
+                <!-- Usuario actualmente conectado -->
+                <div class="usuario">
+
+                    Usuario:
+                    <strong>admin</strong>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================================
+                 INICIO
+                 ========================================= -->
+
+            <section
+                id="inicio"
+                class="seccion activa"
+            >
+
+                <div class="titulo-contenido">
+
+                    <h2>
+                        Gestión del proyecto académico
+                    </h2>
+
+                    <p>
+                        Resumen general de la información registrada.
+                    </p>
+
+                </div>
+
+
+                <!-- Información del proyecto actual -->
+                <div class="proyecto-resumen">
+
+                    <h3>
+                        Proyecto actual
+                    </h3>
+
+                    <p id="nombreProyectoInicio">
+                        No hay un proyecto registrado.
+                    </p>
+
+                </div>
+
+
+                <!-- Resumen de cantidades -->
+                <div class="tarjetas">
+
+                    <div class="tarjeta">
+
+                        <span
+                            class="numero"
+                            id="totalIntegrantes"
+                        >
+                            0
+                        </span>
+
+                        <span class="texto">
+                            Integrantes
+                        </span>
+
+                    </div>
+
+
+                    <div class="tarjeta">
+
+                        <span
+                            class="numero"
+                            id="totalTareas"
+                        >
+                            0
+                        </span>
+
+                        <span class="texto">
+                            Tareas
+                        </span>
+
+                    </div>
+
+
+                    <div class="tarjeta">
+
+                        <span
+                            class="numero"
+                            id="totalPendientes"
+                        >
+                            0
+                        </span>
+
+                        <span class="texto">
+                            Pendientes
+                        </span>
+
+                    </div>
+
+
+                    <div class="tarjeta">
+
+                        <span
+                            class="numero"
+                            id="totalCompletadas"
+                        >
+                            0
+                        </span>
+
+                        <span class="texto">
+                            Completadas
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Barra de progreso -->
+                <div class="tarjeta-progreso">
+
+                    <div class="encabezado-progreso">
+
+                        <h3>
+                            Progreso del proyecto
+                        </h3>
+
+                        <span id="textoProgreso">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="barra-fondo">
+
+                        <div
+                            id="barraProgreso"
+                            class="barra"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Próximas entregas -->
+                <div class="panel">
+
+                    <h3>
+                        Próximas entregas
+                    </h3>
+
+                    <div id="proximasEntregas">
+
+                        <p class="mensaje-vacio">
+                            No hay próximas entregas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 PROYECTOS
+                 ========================================= -->
+
+            <section
+                id="proyectos"
+                class="seccion"
+            >
+
+                <div class="titulo-contenido">
+
+                    <h2>
+                        Proyectos
+                    </h2>
+
+                    <p>
+                        Registra y administra el proyecto académico.
+                    </p>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Registrar proyecto
+                    </h3>
+
+
+                    <div class="formulario">
+
+                        <input
+                            type="text"
+                            id="nombreProyecto"
+                            placeholder="Nombre del proyecto"
+                        >
+
+
+                        <button
+                            id="guardarProyecto"
+                            class="boton-principal"
+                        >
+                            Guardar proyecto
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Proyecto registrado actualmente -->
+                <div class="panel">
+
+                    <h3>
+                        Proyecto actual
+                    </h3>
+
+
+                    <div id="proyectoActual">
+
+                        <p class="mensaje-vacio">
+                            No hay un proyecto registrado.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Botón para eliminar el proyecto -->
+                    <button
+                        id="eliminarProyecto"
+                        class="boton-eliminar-proyecto"
+                        style="display: none;"
+                    >
+                        Eliminar proyecto
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 INTEGRANTES
+                 ========================================= -->
+
+            <section
+                id="integrantes"
+                class="seccion"
+            >
+
+                <div class="titulo-contenido">
+
+                    <h2>
+                        Integrantes
+                    </h2>
+
+                    <p>
+                        Agrega los integrantes asociados al proyecto.
+                    </p>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Agregar integrante
+                    </h3>
+
+
+                    <div class="formulario">
+
+                        <input
+                            type="text"
+                            id="nombreIntegrante"
+                            placeholder="Nombre del integrante"
+                        >
+
+
+                        <button
+                            id="agregarIntegrante"
+                            class="boton-principal"
+                        >
+                            Agregar integrante
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Integrantes registrados
+                    </h3>
+
+
+                    <div id="listaIntegrantes">
+
+                        <p class="mensaje-vacio">
+                            No hay integrantes registrados.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 TAREAS
+                 ========================================= -->
+
+            <section
+                id="tareas"
+                class="seccion"
+            >
+
+                <div class="titulo-contenido">
+
+                    <h2>
+                        Tareas
+                    </h2>
+
+                    <p>
+                        Crea, asigna y realiza seguimiento de las tareas.
+                    </p>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Crear tarea
+                    </h3>
+
+
+                    <div class="formulario">
+
+                        <input
+                            type="text"
+                            id="nombreTarea"
+                            placeholder="Nombre de la tarea"
+                        >
+
+
+                        <select id="responsableTarea">
+
+                            <option value="">
+                                Seleccionar responsable
+                            </option>
+
+                        </select>
+
+
+                        <input
+                            type="date"
+                            id="fechaTarea"
+                        >
+
+
+                        <button
+                            id="crearTarea"
+                            class="boton-principal"
+                        >
+                            Crear tarea
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Tareas registradas
+                    </h3>
+
+
+                    <div id="listaTareas">
+
+                        <p class="mensaje-vacio">
+                            No hay tareas registradas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 RECURSOS
+                 ========================================= -->
+
+            <section
+                id="recursos"
+                class="seccion"
+            >
+
+                <div class="titulo-contenido">
+
+                    <h2>
+                        Recursos
+                    </h2>
+
+                    <p>
+                        Centraliza enlaces y recursos utilizados en el proyecto.
+                    </p>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Agregar recurso
+                    </h3>
+
+
+                    <div class="formulario">
+
+                        <input
+                            type="text"
+                            id="nombreRecurso"
+                            placeholder="Nombre del recurso"
+                        >
+
+
+                        <input
+                            type="url"
+                            id="enlaceRecurso"
+                            placeholder="https://ejemplo.com"
+                        >
+
+
+                        <button
+                            id="agregarRecurso"
+                            class="boton-principal"
+                        >
+                            Agregar recurso
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <h3>
+                        Recursos registrados
+                    </h3>
+
+
+                    <div id="listaRecursos">
+
+                        <p class="mensaje-vacio">
+                            No hay recursos registrados.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 RECORDATORIOS
+                 ========================================= -->
+
+            <section
+                id="recordatorios"
+                class="seccion"
+            >
+
+                <div class="titulo-contenido">
+
+                    <h2>
+                        Recordatorios
+                    </h2>
+
+                    <p>
+                        Consulta las tareas pendientes y sus fechas de entrega.
+                    </p>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div id="listaRecordatorios">
+
+                        <p class="mensaje-vacio">
+                            No hay tareas pendientes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Se conecta el archivo JavaScript principal -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

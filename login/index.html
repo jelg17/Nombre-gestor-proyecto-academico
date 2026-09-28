@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Se define la codificación de caracteres de la página -->
+    <meta charset="UTF-8">
+
+    <!-- Se adapta la página a diferentes tamaños de pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Iniciar Sesión</title>
+
+    <!-- Se conecta el archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+    <!--
+        Contenedor principal que organiza
+        el inicio de sesión y el registro.
+    -->
+    <div class="contenedor">
+
+
+        <!-- ==========================================
+             INICIO DE SESIÓN
+        =========================================== -->
+
+        <div class="formulario login-form">
+
+            <!-- Título principal del formulario -->
+            <h1>Iniciar Sesión</h1>
+
+            <!-- Descripción de los datos solicitados -->
+            <p class="descripcion">
+                Use su correo y contraseña
+            </p>
+
+
+            <!--
+                Formulario utilizado para recibir
+                los datos de inicio de sesión.
+            -->
+            <form id="loginForm">
+
+
+                <!-- Campo para ingresar el correo -->
+                <div class="input-container">
+
+                    <input
+                        type="text"
+                        id="loginEmail"
+                        placeholder="Correo"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Campo para ingresar la contraseña -->
+                <div class="input-container">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Botón para enviar los datos del formulario -->
+                <button
+                    type="submit"
+                    class="boton-principal">
+
+                    INICIAR SESIÓN
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             PANEL DERECHO DEL LOGIN
+        =========================================== -->
+
+        <div class="panel panel-login">
+
+            <div class="panel-contenido">
+
+                <!-- Mensaje de bienvenida para el usuario -->
+                <h2>¡Bienvenido!</h2>
+
+                <p>
+                    Ingrese sus datos personales para usar
+                    las funciones del sitio
+                </p>
+
+                <!-- Botón para mostrar el formulario de registro -->
+                <button
+                    type="button"
+                    id="mostrarRegistro"
+                    class="boton-secundario">
+
+                    Registrarse
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             FORMULARIO DE REGISTRO
+        =========================================== -->
+
+        <div class="formulario registro-form">
+
+            <!-- Título del formulario de registro -->
+            <h1>Registrarse</h1>
+
+            <p class="descripcion">
+                Cree una cuenta para utilizar el sistema
+            </p>
+
+
+            <!--
+                Formulario preparado para realizar
+                posteriormente el registro de usuarios.
+            -->
+            <form id="registroForm">
+
+
+                <!-- Campo para ingresar el nombre -->
+                <div class="input-container">
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Nombre"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Campo para ingresar el correo -->
+                <div class="input-container">
+
+                    <input
+                        type="email"
+                        id="registroEmail"
+                        placeholder="Correo"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Campo para ingresar la contraseña -->
+                <div class="input-container">
+
+                    <input
+                        type="password"
+                        id="registroPassword"
+                        placeholder="Contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <!--
+                    El formulario utiliza POST y queda preparado
+                    para conectar posteriormente el registro
+                    con una base de datos.
+                -->
+                <button
+                    type="submit"
+                    class="boton-principal">
+
+                    REGISTRARSE
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             PANEL DEL REGISTRO
+        =========================================== -->
+
+        <div class="panel panel-registro">
+
+            <div class="panel-contenido">
+
+                <!-- Mensaje mostrado en el panel de registro -->
+                <h2>¡Hola!</h2>
+
+                <p>
+                    Regístrese con sus datos personales para
+                    utilizar las funciones del sitio
+                </p>
+
+
+                <!-- Botón para regresar al inicio de sesión -->
+                <button
+                    type="button"
+                    id="mostrarLogin"
+                    class="boton-secundario">
+
+                    Iniciar Sesión
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Se conecta el archivo JavaScript con la página -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
